@@ -1,0 +1,72 @@
+/* Profil perusahaan di bagian paling atas + semua item bisa diklik */
+
+/* Karena profil sekarang di atas, ruang untuk navbar pindah ke sini. */
+.profile-top { padding-top: 130px; background: linear-gradient(180deg, var(--paper), var(--cream)); }
+.profile-top + .hero-section { padding-top: 96px; }
+@media (max-width: 991.98px) { .profile-top { padding-top: 108px; } }
+
+/* Dasar semua tombol penjelasan: tampil seperti teks biasa, tapi jelas bisa diklik. */
+.info-trigger {
+  appearance: none; background: none; border: 0; padding: 0; margin: 0;
+  font: inherit; color: inherit; text-align: left; cursor: pointer;
+  transition: background-color .2s, color .2s, transform .2s, box-shadow .2s;
+}
+.info-trigger:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 10px; }
+
+
+/* Paragraf pembuka */
+.lead-trigger { display: block; width: 100%; padding: 12px; margin-left: -12px; border-radius: 14px; }
+.lead-trigger:hover { background: rgba(185, 133, 67, .10); }
+.lead-trigger .lead-text { display: block; }
+.more-hint { display: inline-block; margin-top: 8px; color: var(--gold); font-weight: 700; font-size: .92rem; }
+
+/* Perjalanan (timeline) */
+.timeline li { padding-bottom: 14px; }
+.tl-btn { display: block; width: 100%; padding: 8px 14px; border-radius: 12px; }
+.tl-btn:hover { background: var(--paper); box-shadow: 0 6px 22px rgba(16, 40, 63, .10); transform: translateX(4px); }
+.tl-btn:hover strong { color: var(--gold); }
+.tl-btn::after { content: "Baca ceritanya \2192"; display: block; margin-top: 4px; font-size: .85rem; font-weight: 700; color: var(--gold); opacity: 0; transition: opacity .2s; }
+.tl-btn:hover::after, .tl-btn:focus-visible::after { opacity: 1; }
+@media (hover: none) { .tl-btn::after { opacity: 1; } }
+
+/* Baris data + kontak */
+.info-list li { padding: 0; }
+.row-btn { display: flex; flex-direction: column; width: 100%; padding: 10px 10px; border-radius: 10px; font-weight: 600; color: var(--navy); word-break: break-word; }
+.row-btn small { color: var(--muted); font-weight: 600; }
+.row-btn:hover { background: var(--cream); color: var(--gold); }
+.row-btn::after { content: "Klik untuk penjelasan"; font-size: .78rem; color: var(--gold); font-weight: 700; margin-top: 2px; opacity: .85; }
+
+/* Jam operasional */
+.open-badge.info-trigger { border: 0; }
+.open-badge.info-trigger:hover { filter: brightness(.96); transform: translateY(-1px); }
+.hours td { padding: 0; }
+.hours-btn { display: flex; justify-content: space-between; gap: 12px; width: 100%; padding: 9px 8px; border-radius: 8px; }
+.hours-btn b { color: var(--navy); }
+.hours-btn:hover { background: var(--cream); }
+.tz-btn { margin-top: 8px; padding: 4px 8px; border-radius: 8px; font-size: .88rem; color: var(--muted); text-decoration: underline dotted; }
+.tz-btn:hover { color: var(--gold); }
+
+/* Isi jendela penjelasan */
+.explain-hero { display: flex; align-items: center; gap: 16px; padding: 34px 34px 0; }
+.explain-icon { flex: none; display: grid; place-items: center; width: 60px; height: 60px; border-radius: 16px; font-size: 1.7rem; background: var(--navy); color: var(--gold-light); }
+.explain-body { padding: 20px 34px 34px; }
+.explain-body p { color: var(--ink); line-height: 1.7; }
+.explain-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.25rem; }
+.explain-actions .btn-copy { border: 1px solid var(--line); background: var(--paper); color: var(--navy); font-weight: 600; border-radius: 999px; padding: .5rem 1.1rem; }
+.explain-actions .btn-copy:hover { border-color: var(--gold); color: var(--gold); }
+.explain-note { margin-top: 1rem; font-size: .9rem; color: var(--muted); }
+@media (max-width: 575.98px) {
+  .explain-hero { padding: 28px 22px 0; }
+  .explain-body { padding: 16px 22px 26px; }
+}
+
+/* Banner paling atas: nama + slogan */
+.profile-banner { text-align: center; max-width: 760px; margin: 0 auto 3.5rem; }
+.banner-logo { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 18px 16px; border-radius: 22px; }
+.banner-logo:hover { background: rgba(185, 133, 67, .10); }
+.banner-svg { width: 112px; height: 112px; margin-bottom: 14px; filter: drop-shadow(0 12px 24px rgba(16, 40, 63, .25)); }
+.banner-title { margin: 0; font-family: var(--serif); font-weight: 700; font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.1; color: var(--navy); }
+.banner-tag { margin-top: 8px; color: var(--gold); font-weight: 700; letter-spacing: .06em; font-size: clamp(1rem, 2.4vw, 1.25rem); }
+.banner-sub { margin: 1rem auto 1.4rem; color: var(--muted); font-size: 1.1rem; max-width: 560px; }
+.banner-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+@media (max-width: 575.98px) { .banner-svg { width: 88px; height: 88px; } .profile-banner { margin-bottom: 2.5rem; } }
